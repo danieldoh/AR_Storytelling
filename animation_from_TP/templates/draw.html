@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload and Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-link {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Upload</h1>
+        <input type="text" id="filePathInput" placeholder="Enter file path">
+        <button id="uploadButton">Upload</button>
+    </div>
+
+    <script>
+        const uploadButton = document.getElementById("uploadButton");
+        uploadButton.addEventListener("click", async () => {
+            const filePath = document.getElementById("filePathInput").value;
+            console.log(filePath)
+            try {
+                const response = await fetch(`http://128.46.36.79:8888/upload?file_path=${encodeURIComponent(filePath)}`, {
+                    method: "POST"
+                });
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>
+

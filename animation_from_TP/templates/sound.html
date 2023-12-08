@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation From Text</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pathway Gothic One">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awsome/4.7.0/css/font-awsome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+header {
+  align-items: center;
+}
+
+body, h1, h2 {font-family: "Pathway Gothic One", Arial, sans-serif}
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  text-align: center;
+}
+/* CSS */
+.button-55 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+/* CSS */
+.button-38 {
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-38:hover {
+  background-color: rgb(249,250,251);
+}
+
+.button-38:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-38:focus-visible {
+  box-shadow: none;
+}
+/* CSS */
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column_left {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  float: left;
+  width:70%;
+  padding: 0px;
+  height: 20000px;
+}
+
+.column_right {
+  text-align: center;
+  float: right;
+  width:30%;
+  padding: 0px;
+  height: 20000px;
+}
+
+.column img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+#btn-container {
+  display: flex;
+  justify-content: center; /* Align items horizontally */
+  align-items: center; /* Align items vertically */
+  gap: 10px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: center;
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #e6f9ff;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.input_box {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+<header class="w3-center w3-margin-bottom">
+  <h1><b>Animation From Text</b></h1>
+  <p><b>Generate Animation From Text</b></p>
+  <div id="menu">
+    <nav>
+      <ul>
+        <li><a href="/story">Storytelling</a></li>
+        <li><a href="/draw">File</a></li>
+        <li><a href="/menu">Presentation</a></li>
+        <li><a href="/">Main</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+</div>
+<div class="row">
+  <div id="content-container" class="column_left" style="background-color:#ddd;">
+    <h2>Music Prompt</h2>
+    <form id="txt-form" method="post" onsubmit="saveText(event)">
+        <textarea id="text" name="text" rows="1" cols="90" placeholder="80s pop track with bassy drums and synth"></textarea>
+        <input type="submit" value="SAVE" class="button-54" style="top: -10px; margin-left: 10px;"></input>
+    </form>
+    <button id="generate" class="button-54">Generate</button>
+    <h3 style="padding-top: 20px;"></h3>
+    <audio id="audio-controller" src="/static/music/musicgen_out.wav" controls style="display: none; padding-top: 10px; padding-bottom: 20px;"></audio>
+  </div>
+  <div class="column_right" style="background-color:#aaa;">
+    <h2>Music Pre-Generated</h2>
+      <h3 style="padding-top: 20px;">Sample</h3>
+      <audio src="/static/music/musicgen_out.wav" controls styles="padding-top: 40px;"></audio>
+  </div>
+</div>
+<script>
+  function saveText(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    fetch("/save_sound_text/", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }
+
+  function showAudioController() {
+    const audioController = document.getElementById("audio-controller");
+    audioController.style.display = "block";
+  }
+
+  function runBashScript() {
+    fetch("/generate_sound/")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        showAudioController();
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+  const generateButton = document.getElementById("generate");
+  generateButton.addEventListener("click", () => {
+    runBashScript();
+  });
+</script>
+</body>
+
+</html>
+

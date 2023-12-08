@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Animation From Text</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pathway Gothic One">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awsome/4.7.0/css/font-awsome.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    header {
+      align-items: center;
+    }
+
+    body,
+    h1,
+    h2 {
+      font-family: "Pathway Gothic One", Arial, sans-serif
+    }
+
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    /* CSS */
+    .button-55 {
+      align-self: center;
+      background-color: #fff;
+      background-image: none;
+      background-position: 0 90%;
+      background-repeat: repeat no-repeat;
+      background-size: 4px 3px;
+      border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+      border-style: solid;
+      border-width: 2px;
+      box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+      box-sizing: border-box;
+      color: #41403e;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Neucha, sans-serif;
+      font-size: 1rem;
+      line-height: 23px;
+      outline: none;
+      padding: .75rem;
+      text-decoration: none;
+      transition: all 235ms ease-in-out;
+      border-bottom-left-radius: 15px 255px;
+      border-bottom-right-radius: 225px 15px;
+      border-top-left-radius: 255px 15px;
+      border-top-right-radius: 15px 225px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-55:hover {
+      box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+      transform: translate3d(0, 2px, 0);
+    }
+
+    .button-55:focus {
+      box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+    }
+
+    /* CSS */
+    .button-38 {
+      background-color: #FFFFFF;
+      border: 0;
+      border-radius: .5rem;
+      box-sizing: border-box;
+      color: #111827;
+      font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: .875rem;
+      font-weight: 600;
+      line-height: 1.25rem;
+      padding: .75rem 1rem;
+      text-align: center;
+      text-decoration: none #D1D5DB solid;
+      text-decoration-thickness: auto;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-38:hover {
+      background-color: rgb(249, 250, 251);
+    }
+
+    .button-38:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+
+    .button-38:focus-visible {
+      box-shadow: none;
+    }
+
+    /* CSS */
+    .button-54 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      cursor: pointer;
+      border: 3px solid;
+      padding: 0.25em 0.5em;
+      box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-54:active {
+      box-shadow: 0px 0px 0px 0px;
+      top: 5px;
+      left: 5px;
+    }
+
+    @media (min-width: 768px) {
+      .button-54 {
+        padding: 0.25em 0.75em;
+      }
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .column_left {
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      float: left;
+      width: 70%;
+      padding: 0px;
+      height: 20000px;
+    }
+
+    .column_right {
+      text-align: center;
+      float: right;
+      width: 30%;
+      padding: 0px;
+      height: 20000px;
+    }
+
+    .column img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    }
+
+    li {
+      float: center;
+      display: inline-block;
+    }
+
+    li a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 16px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #e6f9ff;
+    }
+
+    .active {
+      background-color: #4CAF50;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    .input_box {
+      width: 100px;
+      height: 40px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="w3-center w3-margin-bottom">
+    <h1><b>Animation From Text</b></h1>
+    <p><b>Generate Animation From Text</b></p>
+    <div id="menu">
+      <nav>
+        <ul>
+          <li><a href="/">Main</a></li>
+          <li><a href="/draw">File</a></li>
+          <li><a href="/menu">Presentation</a></li>
+          <li><a href="/sound">Audio</a></li>
+        </ul>
+      </nav>
+      <!--<button onclick="redirectToMenu()">Page 1</button>-->
+    </div>
+  </header>
+  </div>
+  <div class="row">
+    <!--<div class="column" style="background-color:#bbb;">
+      <h2>Save the text to File</h2>
+      <form id="saveForm" method="post" onsubmit="saveText(event)">
+          <label for="text" style="margin-bottom: 30px">Enter your text (One sentence per line):</label><br>
+          <textarea id="text" name="text" rows="10" cols="90" placeholder="Subject + Action + Background. [e.g., Iron Man is dancing on the beach.]"></textarea><br><br>
+          <input type="submit" value="Save" class="button-54" style="margin-bottom: 30px">
+          <p id="saveStatus" style="display: none; color: green;"></p>
+      </form>
+  </div>-->
+
+    <!--<div class="column" style="background-color:#bbb;">
+      <h2>Recent Animation</h2>
+          <button id="showButton" onclick="showGIF()" class="button-54">Show GIF</button>
+          <img id="resultGIF" src="/get_gif/?random=" + Math.random() alt="Result GIF" style="display: none; width: 800px;">
+
+  </div>-->
+    <div i"content-container" class="column_left" style="background-color:#ddd;">
+      <h2>Story</h2>
+      <form id="txt-form" style="text-align:center;">
+        <label for="file-name" style="text-align: center; font-size: 20px; margin-right: 10px;">Enter story name:
+        </label>
+        <input type="text" id="file-name" class="input_box" style="margin-right: 10px;" required>
+        <button type="button" id="display-button" class="button-38" style="margin-top: 10px">Load</button>
+      </form>
+      <div id="content-container" class="column_left" style="height:auto; font-size:30px; margin-left: 20px;"></div>
+      <button id="highlight-btn"> Highlight Selected Text</button>
+      <button id="save-btn">Save Highlighted Text</button>
+    </div>
+    <div class="column_right" style="background-color:#aaa;">
+      <h2>Animation</h2>
+      <label>
+        <input type="checkbox" id="motion" style="padding-left: 10px;">
+        With Pose
+        <input type="checkbox" id="nomotion">
+        Without Pose
+      </label>
+      <h5>* With motion: Can handle multiple action(sentence)</h5>
+      <h5>* Without motion: Can handle only one sentence</h5>
+      <form id="runScriptForm">
+        <button type="submit" class="button-54">Generate</button>
+      </form>
+      <div id="videoContainer" style="display: none;">
+        <video id="videoImage" src="/get_video/" alt="Generated Animation" style="height: Auto; width: 300px;">
+      </div>
+    </div>
+  </div>
+  <script>
+    // display text
+    const displayButton = document.getElementById("display-button");
+    const fileNameInput = document.getElementById("file-name");
+    const contentContainer = document.getElementById("content-container");
+
+    displayButton.addEventListener("click", async () => {
+      const fileName = fileNameInput.value;
+      console.log(fileName)
+      if (!fileName) return;
+
+      try {
+        console.log(`/get-content?file_name=${fileName}`);
+        const response = await fetch(`/get-content?file_name=${fileName}`);
+        const data = await response.json();
+        console.log(data);
+        if (data.error) {
+          contentContainer.textContent = data.error;
+        } else {
+          const lines = data.content.split('\n');
+          contentContainer.innerHTML = '';
+
+          lines.forEach(line => {
+            const lineElement = document.createElement('p');
+            lineElement.textContent = line;
+            contentContainer.appendChild(lineElement);
+          });
+        }
+      } catch (error) {
+        console.error("An error occurred:", error);
+        contentContainer.textContent = "Error loading content.";
+      }
+    });
+
+    //highlight + save text
+    const textContainer = document.getElementById('content-container');
+    const highlightBtn = document.getElementById('highlight-btn');
+    const saveBtn = document.getElementById('save-btn');
+
+    let highlightedText = '';
+
+    highlightBtn.addEventListener('click', () => {
+      highlightedText = getSelectedText();
+      console.log(highlightedText)
+      if (highlightedText) {
+        highlightSelectedText(highlightedText);
+      }
+    });
+
+    saveBtn.addEventListener('click', async () => {
+      if (highlightedText) {
+        console.log(highlightedText)
+        try {
+          const response = await fetch('/save_highlighted_text/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+              text: highlightedText,
+            }),
+          });
+
+          if (response.ok) {
+            console.log('Highlighted text saved successfully');
+          } else {
+            console.error('Error saving highlighted text');
+          }
+        } catch (error) {
+          console.error('An error occurred:', error);
+        }
+      }
+    });
+
+
+    function getSelectedText() {
+      if (window.getSelection) {
+        return window.getSelection().toString();
+      } else if (document.selection && document.selection.type != 'Control') {
+        return document.selection.createRange().text;
+      }
+      return '';
+    }
+
+    function highlightSelectedText(text) {
+      const currentText = textContainer.innerHTML;
+      const highlightedText = `<span class="highlight">${text}</span>`;
+      textContainer.innerHTML = currentText.replace(text, highlightedText);
+    }
+
+    //save text
+    function saveText(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      fetch("/save_text/", {
+        method: "POST",
+        body: formData
+      })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+    function redirectToMenu() {
+      window.location.href = "/menu";
+    }
+    function goToPage(url) {
+      window.location.href = url;
+    }
+    function showGIF() {
+      var gif = document.getElementById("resultGIF");
+      gif.style.display = "block";
+      var button = document.getElementById("showButton");
+      button.style.display = "none";
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('runScriptForm');
+      const motionCheckbox = document.getElementById('motion');
+      const noMotionCheckbox = document.getElementById('nomotion');
+      const videoContainer = document.getElementById('videoContainer');
+      const videoImage = document.getElementById('videoImage');
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        let scriptURL = "/run_script/";
+
+        if (motionCheckbox.checked) {
+          scriptURL = "/run_motion_script/";
+        }
+
+        const response = await fetch(scriptURL, {
+          method: "POST",
+          body: formData
+        });
+
+        if (response.ok) {
+          videoContainer.style.display = 'block';
+          videoImage.src = "/get_video/?random=" + Math.random();
+        } else {
+          alert("Error executing the script. Please try again.");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

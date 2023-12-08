@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Animation From Text</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pathway Gothic One">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awsome/4.7.0/css/font-awsome.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    header {
+      align-items: center;
+    }
+
+    h1 {
+      font-family: "Pathway Gothic One", Arial, sans-serif;
+      font-size: 100px;
+    }
+
+    body,
+    h2 {
+      font-family: "Pathway Gothic One", Arial, sans-serif;
+      font-size: 60px;
+    }
+
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    /* CSS */
+    .button-55 {
+      align-self: center;
+      background-color: #fff;
+      background-image: none;
+      background-position: 0 90%;
+      background-repeat: repeat no-repeat;
+      background-size: 4px 3px;
+      border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+      border-style: solid;
+      border-width: 2px;
+      box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+      box-sizing: border-box;
+      color: #41403e;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Neucha, sans-serif;
+      font-size: 1rem;
+      line-height: 23px;
+      outline: none;
+      padding: .75rem;
+      text-decoration: none;
+      transition: all 235ms ease-in-out;
+      border-bottom-left-radius: 15px 255px;
+      border-bottom-right-radius: 225px 15px;
+      border-top-left-radius: 255px 15px;
+      border-top-right-radius: 15px 225px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-55:hover {
+      box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+      transform: translate3d(0, 2px, 0);
+    }
+
+    .button-55:focus {
+      box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+    }
+
+    /* CSS */
+    .button-38 {
+      background-color: #FFFFFF;
+      border: 0;
+      border-radius: .5rem;
+      box-sizing: border-box;
+      color: #111827;
+      font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: .875rem;
+      font-weight: 600;
+      line-height: 1.25rem;
+      padding: .75rem 1rem;
+      text-align: center;
+      text-decoration: none #D1D5DB solid;
+      text-decoration-thickness: auto;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-38:hover {
+      background-color: rgb(249, 250, 251);
+    }
+
+    .button-38:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+
+    .button-38:focus-visible {
+      box-shadow: none;
+    }
+
+    .button-17 {
+      align-items: center;
+      appearance: none;
+      background-color: #fff;
+      border-radius: 30px;
+      border-style: none;
+      box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+      box-sizing: border-box;
+      color: #3c4043;
+      cursor: pointer;
+      display: inline-flex;
+      fill: currentcolor;
+      font-family: "Google Sans", Roboto, Arial, sans-serif;
+      font-size: 30px;
+      font-weight: 500;
+      height: 48px;
+      justify-content: center;
+      letter-spacing: .25px;
+      line-height: normal;
+      max-width: 100%;
+      overflow: visible;
+      padding: 2px 24px;
+      position: relative;
+      text-align: center;
+      text-transform: none;
+      transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: auto;
+      will-change: transform, opacity;
+      z-index: 0;
+    }
+
+    .button-17:hover {
+      background: #F6F9FE;
+      color: #174ea6;
+    }
+
+    .button-17:active {
+      box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+      outline: none;
+    }
+
+    .button-17:focus {
+      outline: none;
+      border: 2px solid #4285f4;
+    }
+
+    .button-17:not(:disabled) {
+      box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+
+    .button-17:not(:disabled):hover {
+      box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+    }
+
+    .button-17:not(:disabled):focus {
+      box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+
+    .button-17:not(:disabled):active {
+      box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+    }
+
+    .button-17:disabled {
+      box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+
+    /* CSS */
+    .button-54 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      cursor: pointer;
+      border: 3px solid;
+      padding: 0.25em 0.5em;
+      box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-54:active {
+      box-shadow: 0px 0px 0px 0px;
+      top: 5px;
+      left: 5px;
+    }
+
+    @media (min-width: 768px) {
+      .button-54 {
+        padding: 0.25em 0.75em;
+      }
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .column_left {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 20px;
+      float: left;
+      width: 33.3%;
+      padding: 0px;
+      height: 20000px;
+      color: #FFFFFF;
+    }
+
+    .column_middle {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 20px;
+      float: left;
+      width: 33.3%;
+      padding: 0px;
+      height: 20000px;
+      color: #000000;
+    }
+
+    .column_right {
+      text-align: center;
+      float: right;
+      width: 33.3%;
+      padding: 0px;
+      height: 20000px;
+      font-size: 40px;
+      color: #FFFFFF;
+    }
+
+    .column img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    }
+
+    li {
+      float: center;
+      display: inline-block;
+    }
+
+    li a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 16px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #e6f9ff;
+    }
+
+    .active {
+      background-color: #4CAF50;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    .input_box {
+      width: 100px;
+      height: 40px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="w3-center w3-margin-bottom">
+    <h1><b>CARING-AI</b></h1>
+  </header>
+  </div>
+  <div class="row">
+    <div id="content-container" class="column_left" style="background-color:#187c4d;">
+      <h2 style="display: inline; margin-bottom: 30px; margin-right: 10px;">Text Prompt</h2>
+      <img src="static/Desktop/chatgpt.png"
+        style="width: 60px; margin-bottom: 10px; display: inline-block; vertical-align: middle; margin-top: -15px">
+      <!--<form action="/save_text/" method="post">-->
+      <!--<form action="/save_text/" method="post">-->
+      <form id="saveForm" method="post" onsubmit="saveText(event)">
+        <label for="text" style="margin-bottom: 30px; font-size: 25px;">Type the text in the textbox below</label><br>
+        <textarea id="text" name="text" rows="8" cols="50"
+          style="margin-bottom: 40px; margin-top: 100px;"></textarea><br><br>
+        <p id=" saveStatus" style="display: none; color: green;"></p>
+      </form>
+      <input type="submit" value="Submit" class="button-17" style="margin-bottom: 10px">
+    </div>
+    <div id="content-container" class="column_middle" style="background-color:#f8f6dd;">
+      <h2 style="display: inline; margin-bottom: 30px; margin-right: 10px;">Speech Prompt</h2>
+      <img src="static/Desktop/chatgpt.png"
+        style="width: 60px; margin-bottom: 10px; display: inline-block; vertical-align: middle; margin-top: -15px">
+      <form>
+        <label for="text" style="margin-bottom: 70px; font-size: 25px;">Press the image to speak</label><br>
+        <image src="static/Desktop/pngwing.com.png" style="width: 280px; margin-bottom: 65px; margin-top: 80px;">
+        </image>
+      </form>
+      <input type="submit" value="Submit" class="button-17" style="margin-bottom: 10px">
+    </div>
+    <div class="column_right" style="background-color:#414141;">
+      <h2>Text Instruction</h2>
+      <form>
+        <p id="1">1. "Approach to the table."</p>
+        <p id="2">2. "Pick up the apple on the table."</p>
+        <p id="3">3. "Eat the apple."</p>
+        <p id="4">4. "Move back."</p>
+        <p id="5">5. "Turn around."</p>
+        <p id="6">6. "Leave the kitchen."</p>
+      </form>
+    </div>
+    <script>
+      //highlight + save text
+      const textContainer = document.getElementById('content-container');
+
+      function generateSentence() {
+        const character = document.getElementById("character").value;
+        const motion = document.getElementById("motion").value;
+        const background = document.getElementById("background").value;
+        const sentence = `${character} is ${motion} on the ${background}.`;
+        document.getElementById("generatedSentence").textContent = sentence;
+      }
+
+      async function saveSelectedText() {
+        const generatedSentence = document.getElementById("generatedSentence").textContent;
+        console.log(generatedSentence)
+        try {
+          const response = await fetch("/save_selected_text/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ text: generatedSentence }),
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data.message);
+          } else {
+            console.error("Failed to save text:", response.statusText);
+          }
+        } catch (error) {
+          console.error("Error saving text:", error);
+        }
+      }
+
+      function getSelectedText() {
+        if (window.getSelection) {
+          return window.getSelection().toString();
+        } else if (document.selection && document.selection.type != 'Control') {
+          return document.selection.createRange().text;
+        }
+        return '';
+      }
+
+      function saveText(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        fetch("/save_text/", {
+          method: "POST",
+          body: formData
+        })
+          .then(response => {
+            console.log(response);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }
+      function redirectToMenu() {
+        window.location.href = "/menu";
+      }
+      function goToPage(url) {
+        window.location.href = url;
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('runScriptForm');
+        const videoContainer = document.getElementById('videoContainer');
+        const videoElement = document.getElementById('videoElement');
+        const idArray = ["1", "2", "3", "4", "5", "6", "7"];
+
+        function highlightSentence(index) {
+          idArray.forEach((id, i) => {
+            const sentence = document.getElementById(id);
+            if (i === index) {
+              sentence.classList.add('highlight');
+            } else {
+              sentence.classList.remove('highlight');
+            }
+          });
+        }
+
+        let currentIndex = 0;
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          highlightSentence(currentIndex);
+          videoContainer.style.display = 'block';
+          videoElement.src = `/get_without_context_video/?index=${currentIndex}`;
+          currentIndex = (currentIndex + 1) % 7;
+        });
+      });
+    </script>
+</body>
+
+</html>
